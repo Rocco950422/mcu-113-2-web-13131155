@@ -6,8 +6,7 @@ let product = new Product(
   "博碩文化",
   500,
   true,
-  new Date("2024-4-10"),
-  undefined
+  new Date("2024-4-10")
 );
 
 console.log(product);
