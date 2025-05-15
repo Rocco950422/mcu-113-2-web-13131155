@@ -109,7 +109,7 @@ export class ProductService {
     }),
   ];
 
-  gatById(productId: number): Observable<Product> {
+  getById(productId: number): Observable<Product> {
     return of(this._data).pipe(
       mergeMap((data) => data),
       filter(({ id }) => id === productId)
