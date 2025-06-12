@@ -5,10 +5,21 @@
   flex-direction: column;
   gap: 20px;
 
-  .form-column {
+  .form-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    .form-column {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > input {
+        flex-grow: 1;
+        padding: 5px 10px;
+        font-size: 20px;
+      }
+    }
 
     > label,
     > div {
@@ -18,10 +29,9 @@
       font-weight: 400;
     }
 
-    > input {
-      flex-grow: 1;
-      padding: 5px 10px;
-      font-size: 20px;
+    .error-message {
+      margin-left: 150px;
+      color: red;
     }
   }
 
@@ -40,6 +50,12 @@
       &.save {
         background-color: #007bff;
         color: white;
+
+        &:disabled {
+          background-color: #ccc;
+          color: #999;
+          cursor: not-allowed;
+        }
       }
     }
   }
