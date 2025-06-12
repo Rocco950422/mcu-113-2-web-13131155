@@ -15,7 +15,7 @@
     </div>
   </div>
   <ng-container formArrayName="authors"
-    >Add commentMore actions @for (control of authors.controls; track $index) {
+    >@for (control of authors.controls; track $index) {
     <div class="form-item">
       <div class="form-column">
         <div>
@@ -23,7 +23,7 @@
         </div>
         <input type="text" [formControl]="control" />
       </div>
-      @if (control.hasError('required')) {Add commentMore actions
+      @if (control.hasError('required')) {
       <div class="error-message">請輸入作者</div>
       }
     </div>
@@ -34,7 +34,7 @@
       <label>出版社</label>
       <input type="text" formControlName="company" />
     </div>
-    @if (company.hasError('required')) {Add commentMore actions
+    @if (company.hasError('required')) {
     <div class="error-message">請輸入出版社</div>
     }
   </div>
@@ -43,13 +43,13 @@
       <label>單價</label>
       <input type="text" formControlName="price" />
     </div>
-    @if (price.hasError('required')) {Add commentMore actions
+    @if (price.hasError('required')) {
     <div class="error-message">請輸入單價</div>
     }
   </div>
   <div class="form-action">
-    <button type="button">取消</button>
-    <button type="button" class="save" [disabled]="form.invalid">儲存</button>
+    <button type="button" (click)="onCancel()">取消</button>
+    <button type="button" class="save" [disabled]="form.invalid" (click)="onSave()">儲存</button>
   </div>
   <pre>{{ form.value | json }}</pre>
 </div>
